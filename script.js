@@ -1,7 +1,9 @@
+
 console.log("Welcome to Tic Tac Toe");
-let music = new Audio("/music.mp3");
+window.onload = function () {
+  document.getElementById("my_audio").play();
+};
 let audioTurn = new Audio("ting.mp3");
-let gameover = new Audio("gameover.mp3");
 let turn = "X";
 let isgameover = false;
 
@@ -35,16 +37,17 @@ const checkWin = () => {
       document
         .querySelector(".imgbox")
         .getElementsByTagName("img")[0].style.width = "200px";
-      document.querySelector(
-        ".line"
-      ).style.transform = `translate(${e[3]}vw, ${e[4]}vw) rotate(${e[5]}deg)`;
-      document.querySelector(".line").style.width = "20vw";
     }
   });
 };
+// show
+function showDiv2() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("temp").style.visibility = "visible";
+  document.getElementById("temp1").style.visibility = "visible";
+}
+setTimeout("showDiv2()", 3000);
 
-// Game Logic
-// music.play()
 let boxes = document.getElementsByClassName("box");
 Array.from(boxes).forEach((element) => {
   let boxtext = element.querySelector(".boxtext");
@@ -61,17 +64,21 @@ Array.from(boxes).forEach((element) => {
     }
   });
 });
-
+Splitting({
+  whitespace: true,
+});
 // Add onclick listener to reset button
-reset.addEventListener("click", () => {
-  let boxtexts = document.querySelectorAll(".boxtext");
-  Array.from(boxtexts).forEach((element) => {
-    element.innerText = "";
-  });
+// reset.addEventListener("click", () => {
+//   let boxtexts = document.querySelectorAll(".boxtext");
+//   Array.from(boxtexts).forEach((element) => {
+//     element.innerText = "";
+//   });
+
   turn = "X";
   isgameover = false;
-  document.querySelector(".line").style.width = "0vw";
   document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
   document.querySelector(".imgbox").getElementsByTagName("img")[0].style.width =
     "0px";
-});
+
+
+

@@ -47,7 +47,12 @@ nav ul {
   justify-content: center;
   align-items: center;
 }
-
+.imgbox {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 .box:hover {
   background-color: rgb(242, 234, 250);
 }
@@ -63,15 +68,9 @@ nav ul {
 .gameInfo h1 {
   font-size: 2.5rem;
 }
-.imgbox {
-  display: block;
-  margin-left: auto;
-  margin-right: 32%;
-  width: 50%;
-}
+
 .imgbox img {
   width: 0;
-  transition: width 1s ease-in-out;
 }
 
 .br-0 {
@@ -112,7 +111,27 @@ nav ul {
   width: 0;
   position: absolute;
   background-color: #333;
-  transition: width 1s ease-in-out;
+}
+
+#loader {
+  border: 16px solid #e3e6f5;
+  border-top: 16px solid #ffc0cb;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width: 950px) {
@@ -129,12 +148,14 @@ nav ul {
     grid-template-rows: repeat(3, 20vw);
     grid-template-columns: repeat(3, 20vw);
   }
-}
-@media (min-width: 950px) {
   .imgbox {
     display: block;
     margin-left: auto;
-    margin-right: 19%;
+    margin-right: 43%;
     width: 50%;
   }
+  #loader {
+    margin-left: 39%;
+  }
 }
+@import url("https://fonts.googleapis.com/css?family=Nova+Mono&display=swap");
