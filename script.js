@@ -1,8 +1,8 @@
+document.addEventListener("DOMContentLoaded", function () {
+  audioTurn = new Audio("/music.mp3");
+});
 
 console.log("Welcome to Tic Tac Toe");
-window.onload = function () {
-  document.getElementById("my_audio").play();
-};
 let audioTurn = new Audio("ting.mp3");
 let turn = "X";
 let isgameover = false;
@@ -74,11 +74,8 @@ Splitting({
 //     element.innerText = "";
 //   });
 
-  turn = "X";
-  isgameover = false;
-  document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
-  document.querySelector(".imgbox").getElementsByTagName("img")[0].style.width =
-    "0px";
-
-
-
+turn = "X";
+isgameover = false;
+document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
+document.querySelector(".imgbox").getElementsByTagName("img")[0].style.width =
+  "0px";
